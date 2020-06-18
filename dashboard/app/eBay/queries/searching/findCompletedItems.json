@@ -1,0 +1,11 @@
+{
+	"findCompletedItemsRequest":{
+		"itemFilter":[
+
+		],
+		"sortOrder":"StartTimeNewest",
+		"paginationInput":{
+			"entriesPerPage":"100"
+		}
+	}
+}

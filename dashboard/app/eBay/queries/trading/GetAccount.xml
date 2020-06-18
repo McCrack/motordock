@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GetAccountRequest xmlns="urn:ebay:apis:eBLBaseComponents">
+  <RequesterCredentials>
+    <eBayAuthToken></eBayAuthToken>
+  </RequesterCredentials>
+  <AccountEntrySortType>AccountEntryFeeTypeAscending</AccountEntrySortType>
+  <AccountHistorySelection>LastInvoice</AccountHistorySelection>
+</GetAccountRequest>

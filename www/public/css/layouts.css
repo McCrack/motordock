@@ -1,0 +1,109 @@
+.wrapper{
+    min-height: 50vh;
+}
+.cart{
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.catalog{
+    display: grid;
+    grid-gap: 8px;
+}
+@media (orientation: portrait) {
+	.catalog{
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+}
+@media (orientation: landscape) {
+	.catalog{
+        padding: 0 1vw 2vw 1vw;
+        grid-template-columns: repeat(auto-fill, minmax(440px, 1fr));
+    }
+}
+@media (max-width: 884px){
+    .sidebar{
+        z-index: 4;
+        top: 64px;
+        width: 100%;
+        overflow: auto;
+        position: fixed;
+        transition: right .3s;
+    }
+
+	input.toggler:not(:checked) + .sidebar,
+    input.toggler:not(:checked) ~ main > .wrapper > .leftbar{
+        right: -110%;
+    }
+    input.toggler:checked + .sidebar,
+    input.toggler:checked ~ main > .wrapper > .leftbar{
+        right: 0;
+    }
+}
+@media (min-width: 885px){
+    main{
+        display: flex;
+        align-items: stretch;
+    }
+    main > .wrapper{
+        width: 100%;
+        flex-grow: 1;
+    }
+    main > aside{
+        width: 100%;
+        max-width: 400px;
+        overflow-x: hidden;
+        transition: max-width .5s;
+    }
+
+    input.toggler:not(:checked)+aside{
+        max-width: 0;
+    }
+    .cart{
+        padding: 10px;
+    }
+    .showcase,
+    .explorer{
+        display: grid;
+        margin: 0 auto;
+    }
+    .explorer{
+        max-width: 1620px;
+        grid-template-columns: minmax(350px, .5fr) auto;
+    }
+    .showcase{
+        max-width: 1500px;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: max-content 1fr;
+    }
+    .showcase > header{
+        grid-column: 2/3;
+    }
+    .showcase > .carousel{
+        grid-row: 1/3;
+    }
+}
+@media (max-width: 1331px){
+    main > aside{
+        right: 0;
+        top: 64px;
+        z-index: 3;
+        position: fixed;
+        min-width: 300px;
+        max-width: 480px;
+        transition: right .3s;
+        height: calc(100% - 64px);
+    }
+    main > input.toggler:not(:checked) + aside{
+        right: -110%;
+    }
+    .cart{
+        overflow: auto;
+        box-shadow: inset 0 -5px 10px -6px #00000040;
+        max-height: calc(100% - 100px);
+    }
+}
+@media (min-width: 1900px){
+    main > aside{
+        max-width: 480px;
+    }
+}

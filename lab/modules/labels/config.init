@@ -1,0 +1,31 @@
+{
+	"status":{
+		"type":"enum",
+		"value":"enabled",
+		"valid":["enabled","disabled"]
+	},
+	"free access":{
+		"type":"enum",
+		"value":"NO",
+		"valid":["YES","NO"]
+	},
+	"access":{
+		"type":"set",
+		"value":"admin, developer",
+		"valid":[
+			"admin",
+			"developer",
+			"editor",
+			"manager",
+			"author",
+			"designer",
+			"partner",
+			"performer"
+		]
+	},
+	"mode":{
+		"type":"enum",
+		"value":"box",
+		"valid":["box"]
+	}
+}

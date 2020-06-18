@@ -1,0 +1,6 @@
+{
+	"findItemsByCategoryRequest": {
+		"categoryId": "0",
+		"paginationInput": { "entriesPerPage": "1" }
+	}
+}

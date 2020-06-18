@@ -1,0 +1,57 @@
+<?php
+
+return [
+    'home' => "Start",
+    'condition' => "Bedingung",
+    'used' => "Gebraucht",
+    'find' => "FINDEN",
+    'search' => "Suchlauf",
+    'search-result' => "Suchergebnis",
+    'nothing-found' => "Nichts gefunden",
+    'working-hours' => "Geschäftszeiten",
+    'sold' => "Ausverkauft",
+
+    '404' => "Dokument nicht gefunden",
+
+    'Mo-Fr' => "Mo-Fr",
+    'Sa-Su-closed' => "Sa, So: Ruhetag",
+    'callback' => "Rückrufformular",
+
+    'back' => "Zurück",
+    'inStock' => "Waren auf Lager",
+    'buy-engine' => "Kaufen Sie Motor",
+
+    'still-questions' => "Wenn Sie noch Fragen haben",
+    'did-not-find' => "Haben Sie nicht gefunden, wonach Sie gesucht haben",
+    'call-us' => "Kontaktieren Sie uns per Telefon",
+    'fill-out-callback-form' => "Oder füllen Sie das Rückrufformular aus",
+
+    'engine' => "Motor",
+    'visit-our-page-on' => "Besuchen Sie unsere Seite auf",
+    'items-in-category' => "Artikel in der Kategorie",
+    'submit' => "Senden",
+    'comment' => "Kommentar",
+    'all-makes' => "All Marken",
+    'contacts' => "Kontakt",
+    'categories' => "Kategorie",
+    'cart' => "Korb",
+    'open-cart' => "Korb öffnen",
+    'toCart' => "In den Warenkorb",
+    'my-cart' => "Mein Warenkorb",
+    'cart-empty' => "Einkaufswagen ist leer",
+    'create-order' => "Komplettbestellung",
+    'order-form' => "Bestellformular",
+    'contact-info' => "Kontaktinformation",
+    'name' => "Vorname",
+    'last-name' => "Nachname",
+    'tel' => "Telefonnummer",
+    'delivery' => "Lieferadresse",
+    'city' => "Stadt",
+    'postcode' => "Postleitzahl",
+    'address' => "Straße und Hausnummer",
+    'order-omment' => "Kommentar zur Bestellung",
+    'order' => "Bestellen",
+    'makes' => "Marken",
+    'vehicle-spare' => "Alle Fahrzeugersatzteile",
+    'privacy-policy-consent' => "Ich habe die Datenschutzerklärung gelesen und bin damit einverstanden"
+];

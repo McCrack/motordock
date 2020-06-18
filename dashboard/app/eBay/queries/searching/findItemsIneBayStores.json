@@ -1,0 +1,23 @@
+{
+	"findItemsIneBayStoresRequest":{
+		"storeName":[
+			
+		],
+		"outputSelector":[
+			"StoreInfo",
+			"PictureURLLarge"
+		],
+		"itemFilter":[{
+			"name":"ListingType",
+			"value":["StoreInventory","FixedPrice"]
+		},{
+			"name":"HideDuplicateItems",
+			"value":["true"]
+		}],
+		"sortOrder":"StartTimeNewest",
+		"paginationInput":{
+			"entriesPerPage":"20",
+			"pageNumber":"1"
+		}
+	}
+}

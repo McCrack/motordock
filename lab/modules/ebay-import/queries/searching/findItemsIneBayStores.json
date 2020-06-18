@@ -1,0 +1,16 @@
+{
+	"findItemsIneBayStoresRequest":{
+		"storeName":"SYNETIQ Intelligent Solutions",
+		"outputSelector":["PictureURLLarge","aspectHistogramContainer"],
+		"itemFilter":[
+			{
+				"name":"HideDuplicateItems",
+				"value":"true"
+			}
+		],
+		"sortOrder":"StartTimeNewest",
+		"paginationInput":{
+			"entriesPerPage":"1"
+		}
+	}
+}

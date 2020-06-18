@@ -1,0 +1,151 @@
+main{
+	position:relative;
+	box-shadow:inset 0 0 6px 0 black;
+}
+main>section.h-bar{
+	right:10px;
+	bottom:5px;
+	position:absolute;
+}
+#log{
+	height:calc(100% - 46px);
+	padding:20px;
+	overflow:auto;
+	box-sizing:border-box;
+	border-radius:5px;
+	
+}
+#log>div{
+	font-size:11px;
+	padding-bottom:8px;
+	font-family:monospace;
+}
+#log>h3{
+	margin:0;
+	padding:6px 0;
+	font-size:20px;
+	text-transform:capitalize;
+}
+#sublog{
+	height:40px;
+	padding:0 20px;
+	margin:2px 20px;
+	font-size:18px;
+	font-weight:bold;
+	line-height:40px;
+	border-top:1px solid #AAA;
+}
+#sublog>div.reset::after{
+	color:#A20;
+	content:" - "attr(title)"s";
+}
+
+
+/*~~~~~~~~~~~~~~~*/
+
+#log>form>div.pagination{
+	padding:10px;
+	max-width:640px;
+	column-count:5;
+	-moz-column-count:5;
+	-webkit-column-count:5;
+
+	column-rule:1px solid #CCC;
+	-moz-column-rule:1px solid #CCC;
+	-webkit-column-rule:1px solid #CCC;
+}
+#log>form>div.pagination>label{
+	width:100%;
+	font-size:12px;
+	cursor:pointer;
+	display:inline-block;
+	font-family:monospace;
+}
+
+#log>form>div.lineups{
+	padding:10px;
+	
+	column-width:180px;
+	-moz-column-width:180px;
+	-webkit-column-width:180px;
+
+	column-rule:1px solid #CCC;
+	-moz-column-rule:1px solid #CCC;
+	-webkit-column-rule:1px solid #CCC;
+}
+#log>form>div.lineups>label{
+	width:100%;
+	font-size:12px;
+	cursor:pointer;
+	display:inline-block;
+	font-family:monospace;
+}
+
+/*~~~~~~~~~~~~~~~*/
+
+#log button{
+	padding:0;
+	cursor:pointer;
+	border-width:0;
+	font-size:16px;
+	font-weight:bold;
+	text-transform:capitalize;
+	background-color:transparent;
+}
+#log button::after{
+	color:black;
+	content:" ❭";
+}
+#log button:hover{
+	text-decoration:underline;
+}
+#log .r{color:#A20;}
+#log .b{color:#111}
+#log .g{color:#0B8}
+#log .u{color:#09E}
+#log .o{color:orange}
+
+
+#lineups>fieldset{
+	margin:6px 0;
+	border:1px solid #777;
+	border-width:1px 0 0 0 ;
+	column-count:2;
+	-moz-column-count:2;
+	-webkit-column-count:2;
+	column-gap:0;
+	-moz-column-gap:0;
+	-webkit-column-gap:0;
+	padding:6px 0 6px 8px;
+}
+#lineups>fieldset>legend{
+	font-size:20px;
+	font-weight:bold;
+}
+#lineups>fieldset>label{
+	color:#888;
+	width:100%;
+	margin:5px 0;
+	max-width:106px;
+	cursor:pointer;
+	font-size:12px;
+	line-height:28px;
+	white-space:nowrap;
+	display:inline-block;
+	overflow: hidden;
+	text-overflow:ellipsis;
+}
+#lineups>fieldset>label>span{
+	color:white;
+	font-size:14px;
+}
+#lineups>fieldset>label:hover>span,
+#lineups>fieldset>label>input:checked+span{
+	color:#00ADF0;
+}
+#lineups>fieldset>label>img{
+	width:28px;
+	height:28px;
+	margin-right:5px;
+	object-fit:contain;
+}

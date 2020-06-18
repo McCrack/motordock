@@ -1,0 +1,17 @@
+{
+	"findCompletedItemsRequest":{
+		"itemFilter":[
+			{
+				"name": "Seller",
+                "value": ["synetiq","silverlake-automotive-recycling"]
+			},{
+				"name": "StartTimeFrom",
+                "value": "2019-11-13T00:23:03"
+			}
+		],
+		"sortOrder":"StartTimeNewest",
+		"paginationInput":{
+			"entriesPerPage":"100"
+		}
+	}
+}

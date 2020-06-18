@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GetSingleItemRequest xmlns="urn:ebay:apis:eBLBaseComponents">
+	<IncludeSelector>ItemSpecifics,TextDescription,Compatibility,Details</IncludeSelector>
+</GetSingleItemRequest>

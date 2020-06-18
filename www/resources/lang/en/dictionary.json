@@ -1,0 +1,20 @@
+{
+	"year": "Year",
+    "brand": "Brand",
+    "model": "Model",
+    "condition": "Condition",
+    "part number": "Part Number",
+    "used": "Used",
+    "engine": "Engine",
+    "body style": "Body Style",
+    "cars type": "Cars Type",
+    "variant": "Variant",
+
+	"manufactured": "Bauzeit",
+	"power": "Power",
+	"fuel": "Fuel Type",
+	"fuel type": "Fuel Type",
+	"capacity": "Engine Displacement",
+	"engine displacement": "Engine Displacement",
+	"fuel injection": "Fuel Injection"
+}

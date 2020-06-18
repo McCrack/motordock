@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GetTokenStatusRequest xmlns="urn:ebay:apis:eBLBaseComponents">
+	<RequesterCredentials>
+		<eBayAuthToken></eBayAuthToken>
+	</RequesterCredentials>
+</GetTokenStatusRequest>

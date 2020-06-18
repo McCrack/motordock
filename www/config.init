@@ -1,0 +1,104 @@
+{
+    "general":{
+        "site name":{
+            "type":"string",
+            "value":"MOTORDOCK",
+            "valid":[""]
+        },
+        "logo":{
+            "type":"string",
+            "value":"logo.png",
+            "valid":[""]
+        },
+        "home page":{
+            "type":"srting",
+            "value":"start",
+            "valid":[""]
+        },
+        "theme":{
+            "type":"enum",
+            "value":"default",
+            "valid":[
+                "default",
+                "dock",
+                "parts"
+            ]
+        },
+        "language":{
+            "type":"enum",
+            "value":"de",
+            "valid":["de"]
+        },
+        "locality":{
+            "type":"enum",
+            "value":"de",
+            "valid":["de"]
+        },
+        "email":{
+            "type":"srting",
+            "value":"datamorg@gmail.com",
+            "valid":[""]
+        },
+        "catalog limit":{
+            "type":"srting",
+            "value":"20",
+            "valid":[""]
+        }
+    },
+    "currency":{
+        "UAH":{
+            "type":"string",
+            "value":"1.00",
+            "valid":[""]
+        },
+        "USD":{
+            "type":"string",
+            "value":"28.00",
+            "valid":[""]
+        },
+        "EUR":{
+            "type":"string",
+            "value":"32.00",
+            "valid":[""]
+        }
+    },
+    "localization":{
+        "ru":{
+            "type":"enum",
+            "value":"RU",
+            "valid":["RU"]
+        },
+        "uk":{
+            "type":"enum",
+            "value":"UA",
+            "valid":["UA"]
+        },
+        "en":{
+            "type":"enum",
+            "value":"US",
+            "valid":["GB","US"]
+        }
+    },
+    "DataBase":{
+        "db host":{
+            "type":"string",
+            "value":"sdry.mysql.tools",
+            "valid":[""]
+        },
+        "db name":{
+            "type":"string",
+            "value":"sdry_motor",
+            "valid":[""]
+        },
+        "db user":{
+            "type":"string",
+            "value":"sdry_motor",
+            "valid":[""]
+        },
+        "db password":{
+            "type":"string",
+            "value":"z4I7Xz)g5#",
+            "valid":[""]
+        }
+    }
+}

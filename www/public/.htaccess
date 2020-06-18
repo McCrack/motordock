@@ -1,0 +1,176 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # Redirect Trailing Slashes If Not A Folder...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)/$ https://motordock.de/$1 [L,R=301]
+
+    RewriteCond %{HTTP_HOST} (.*)
+    RewriteCond %{REQUEST_URI} /$ [NC]
+    RewriteRule ^(.*)(/)$ $1 [L,R=301]
+
+    # --- Redirect --- #
+
+    RewriteCond %{QUERY_STRING} ^page=1$ [NC]
+    RewriteRule ^(.*)$ /$1? [R=301,L]
+
+    RewriteRule ^auto-ersatz-reparaturteile/alle/(.*) /auto-ersatz-reparaturteile/$1 [R=301,L]
+    RewriteRule ^autoelektronik-gps-sicherheitstechnik/alle/(.*) /autoelektronik-gps-sicherheitstechnik/$1 [R=301,L]
+    RewriteRule ^auto-tuning-styling/alle/(.*) /auto-tuning-styling/$1 [R=301,L]
+    RewriteRule ^auto-anbau-zubehoerteile/alle/(.*) /auto-anbau-zubehoerteile/$1 [R=301,L]
+    RewriteRule ^autoreifen-felgen/alle/(.*) /autoreifen-felgen/$1 [R=301,L]
+
+    RewriteRule ^felgen-24053 /felgen [R=301,L]
+    RewriteRule ^felgen-15145 /felgen [R=301,L]
+    RewriteRule ^felgen-15123 /felgen [R=301,L]
+    RewriteRule ^felgen-12879 /felgen [R=301,L]
+
+    RewriteRule ^WebRoot/StoreTypes/7.30.0 / [R=301,L]
+
+    RewriteRule ^alufelgen-fiat-punto-15-inch-rim-46837079-whl110114-179679 /felgen/fiat [R=301,L]
+    RewriteRule ^stahl-felge-ford-transit-custom-15-inch-et60-65x15-5-stud-whl109474-11646 /felgen/ford [R=301,L]
+
+    RewriteRule ^fensterteile-15689 /fensterteile [R=301,L]
+    RewriteRule ^Autoelektronik$ /autoelektronik-gps-sicherheitstechnik [R=301,L]
+
+    RewriteRule ^Motor-19-DTI-OPEL-Movano /komplette-motoren/opel/movano [R=301,L]
+    RewriteRule ^Motoren-und-Getrieben /motoren-motorenteile [R=301,L]
+    RewriteRule ^Opel-Motor-Z19DTJ-/Z19DTH-Astra-Vectra-Zafira-19-CDTI-150-PS /komplette-motoren/opel [R=301,L]
+    RewriteRule ^Toyota-Injektoren/Duesen-20-D-4D-motor-Avensis-Previa /auto-ersatz-reparaturteile/toyota [R=301,L]
+    RewriteRule ^Injektor-/-Einspritzduese-9X2Q-9K54-6DB-/-0445116013 /auto-ersatz-reparaturteile [R=301,L]
+
+    RewriteRule ^Opel-CD70-Navi /autoradios/opel [R=301,L]
+    RewriteRule ^Opel-CD70-navi-DVD90-Navi-DVD100navi-Reset-Display-safe /auto-dvd-player/opel [R=301,L]
+    RewriteRule ^Opel-CD-70-Navi-DVD-90-NAVi-2004-2007-AUX-IN-Nachruestung-Freischaltung /auto-dvd-player/opel [R=301,L]
+    RewriteRule ^cd-player-opel-adam-stereo-head-unit-ncs1193182-174119 /auto-dvd-player/opel [R=301,L]
+
+    RewriteRule ^Ford-20-TDCI-Motor-Focus-Mondeo-peugeot-20-HDI-Citroen-20HDI-Kuga /komplette-motoren/ford [R=301,L]
+    RewriteRule ^Mercedes-ML-W163-Automatik-Getriebe-Auto-Gearbox-A-1632702100-Code722661 /getriebe-teile/mercedes-benz [R=301,L]
+
+    RewriteRule ^einbau-navigationsgeraete-20894 /autoelektronik-gps-sicherheitstechnik [R=301,L]
+
+    RewriteRule ^Verteilergetriebe-27-Range-Rover-Sport-Discovery3 /getriebe-teile/range-rover [R=301,L]
+
+    RewriteRule ^Opel-Motor-17-CDTI /komplette-motoren/opel [R=301,L]
+
+    RewriteRule ^2005-audi-a3-sport-tdi-hatchback-20-diesel-vorne-panel-assembly-11945 /front-kuehlergrills/audi [R=301,L]
+
+    RewriteRule ^Mercedes-A160-Motor-16-MKB166960 /komplette-motoren/mercedes-benz [R=301,L]
+
+    RewriteRule ^Range-Rover-Sport/land-Rover-30-TDV6-Motor-306-DT-54-000-km-passt-auch-bei-Jaguar-27 /komplette-motoren/range-rover [R=301,L]
+
+    RewriteRule ^Motorsteurgeraet/-ECU-VW-Golf /steuergeraete/volkswagen [R=301,L]
+    RewriteRule ^Motorsteurgeraet/-ECU-Fiat-Stilo /steuergeraete/fiat [R=301,L]
+    RewriteRule ^Motorsteurgeraet/-ECU-Opel /steuergeraete/opel [R=301,L]
+    RewriteRule ^Motorsteurgeraet/-ECU-OPEL /steuergeraete/opel [R=301,L]
+
+    RewriteRule ^Motorsteuergeraet-/-OPEL-VECTRA /steuergeraete/opel/vectra [R=301,L]
+    RewriteRule ^Motorsteuergeraet-/-ECU-55559272-5wk9443-OPEL-ASTRA-H-VECTRA-C-18-Z18XE-reset /steuergeraete/opel/astra [R=301,L]
+    RewriteRule ^Motorsteurgeraet/-ECU-55559272-OPEL /steuergeraete/opel [R=301,L]
+    RewriteRule ^Motorsteuergeraet-/-ECU-Opel /steuergeraete/opel [R=301,L]
+    RewriteRule ^Motorsteuergeraet-/-ECU-OPEL /steuergeraete/opel [R=301,L]
+    RewriteRule ^Opel-Motorsteuergeraet-Resetservice-Tech2-ECU-RESET /steuergeraete/opel [R=301,L]
+    RewriteRule ^Motorsteuergeraet-/OPEL-Vectra-C-Caravan-55355631-5WK9407-18-reset /steuergeraete/opel/vectra [R=301,L]
+    RewriteRule ^Motorsteuergeraet-/OPEL-ECU-Opel-Meriva-17CDTi-/-74KW-97350948-8973509485-/-reset /steuergeraete/opel/meriva [R=301,L]
+    
+    RewriteRule ^Motorsteurgeraet/-ECU-zurueckgesetzt/reset /steuergeraete [R=301,L]
+    RewriteRule ^Motorsteuergeraet-/-ECU-reset /steuergeraete [R=301,L]
+
+    RewriteRule ^Motor-Peugeot-607-Citroen-C5/C6-27HDI-Kommplet-mit-alle-Anbauteile  /komplette-motoren/Citroen/c5 [R=301,L]
+
+    RewriteRule ^Motorsteuergeraet-/-ECUOpel-Signum-19-CDTi-150PS-110kW-Bj05-08-0281014450-55566277-reset /steuergeraete/opel [R=301,L]
+    RewriteRule ^Motorsteuergeraet-/-Opel-Corsa-D-12-A12XER-55590540-ABHH-reset /steuergeraete/opel [R=301,L]
+    RewriteRule ^Motorsteuergeraet-/-ECU-5WK9153-/-09158670-Opel-Astra-G-18i-reset /steuergeraete/opel [R=301,L]
+    RewriteRule ^Motorsteuergeraet-/-ECU-90569370-18-16V-X18XE1-OPEL-VECTRA-B-J96-reset /steuergeraete/opel [R=301,L]
+    RewriteRule ^Motorsteuergeraet-/-ECU-90569370-18-16V-X18XE1-OPEL-VECTRA-B-J96-reset /steuergeraete/opel [R=301,L]
+
+    RewriteRule ^Motorsteuergeraet-/-MERCEDES-A6121535579-Bosch-0281011182-CR214ECU-reset /steuergeraete/mercedes-benz [R=301,L]
+    RewriteRule ^Motorsteuergeraet-/-ECU-0281010796-/-A6121533279-MERCEDES-ML270-CDIreset /steuergeraete/mercedes-benz [R=301,L]
+    RewriteRule ^Motorsteuergeraet-/-ECU-Fiat-Doblo-Opel-Combo-16-0281030776-55259910-reset /steuergeraete/fiat [R=301,L]
+    RewriteRule ^Motorsteurgeraet/-ECU-TOYOTA  /steuergeraete/toyota [R=301,L]
+    RewriteRule ^Motorsteuergeraet-ECU-TOYOTA  /steuergeraete/toyota [R=301,L]
+
+    RewriteRule ^Opel-Astra-17-dti-Motorsteuergeraet-8971891360-/-16267710 /steuergeraete/opel/astra [R=301,L]
+    RewriteRule ^Mercedes-CLK-270-CDI-W209-Motorsteuergeraet /steuergeraete/mercedes-benz [R=301,L]
+
+    RewriteRule ^Range-Rover-Sport/land-Rover-27-TDV6-Motor-276Dt-ca98-000-km-passt-auch-bei-Jaguar-27 /motoren-motorenteile/land-rover [R=301,L]
+
+    RewriteRule ^Motoren-und-Getrieben/Getrieben/Automatikgetrieben /getriebe-teile [R=301,L]
+
+    RewriteRule ^display-screen-renault-laguna-ncs1192153-169395 /autoelektronik-gps-sicherheitstechnik/renault [R=301,L]
+    RewriteRule ^display-screen-nissan-navara-ncs1189423-21676976-4-169395 /autoelektronik-gps-sicherheitstechnik/nissan [R=301,L]
+    RewriteRule ^display-screen-opel-insignia-ncs1192938-169395 /autoelektronik-gps-sicherheitstechnik/opel [R=301,L]
+    RewriteRule ^display-screen-opel-insignia-ncs1192476-22915943g-169395 /autoelektronik-gps-sicherheitstechnik/opel [R=301,L]
+    RewriteRule ^display-screen-opel-insignia-ncs1191179-12844841g-169395 /autoelektronik-gps-sicherheitstechnik/opel [R=301,L]
+    RewriteRule ^display-screen-opel-corsa-ncs1193379-169395 /autoelektronik-gps-sicherheitstechnik/opel [R=301,L]
+    RewriteRule ^display-screen-opel-astra-ncs1191212-169395 /autoelektronik-gps-sicherheitstechnik/opel [R=301,L]
+    RewriteRule ^display-screen-honda-civic-ncs1190249-hmb23010547-169395 /autoelektronik-gps-sicherheitstechnik/honda [R=301,L]
+    RewriteRule ^display-screen-renault-clio-ncs1193736-280380655r-169395 /autoelektronik-gps-sicherheitstechnik/renault [R=301,L]
+    RewriteRule ^display-screen-renault-megane-ncs1194368-259156761r-169395 /autoelektronik-gps-sicherheitstechnik/renault [R=301,L]
+    RewriteRule ^display-screen-renault-ncs1184317-169395 /autoelektronik-gps-sicherheitstechnik/renault [R=301,L]
+    RewriteRule ^Shop/Opel-OPC-Teile /auto-ersatz-reparaturteile/opel [R=301,L]
+    RewriteRule ^Zuendspuleneinheit-Zuendspule-Opel-Astra-H-16-Delphi-GM-1104082 /auto-ersatz-reparaturteile/opel [R=301,L]
+    RewriteRule ^Einspritzpumpe-Opel-Astra-Zafira-0986444002-/-0470504003 /auto-ersatz-reparaturteile/opel/astra [R=301,L]
+
+    RewriteRule ^FIAT-BRAVO-19-Multijet-Getriebe-6-Gang /getriebe-teile/fiat [R=301,L]
+
+    RewriteRule ^Opel-CD30MP3-Reset-Display-safe  /auto-dvd-player/opel [R=301,L]
+    RewriteRule ^Opel-Motor-16-Z16SE-Astra-Meriva-Combo /komplette-motoren/opel/astra [R=301,L]
+    RewriteRule ^Opel-Motor-13-CDTI-corsa-combo-Meriva-Z13DTJ-auch-FIAT-und-Suzuki /komplette-motoren/opel/corsa [R=301,L]
+
+    RewriteRule ^Ford-20-L-Motor-Focus-C-Max-Fiesta-ST-MKBAODA/AODE/SYDA-N4JB-145PS/150-PS /komplette-motoren/ford/focus [R=301,L]
+
+    RewriteRule ^motor-bmw-5-series-2013-2016-520d-se-20d-181bhp-auto-n47d20o1-n47d20c-18677 /komplette-motoren/bmw/5er [R=301,L]
+
+    RewriteRule ^BMW-30-325D-Diesel-Motor-e90-e91-e92-M57D30 /komplette-motoren/bmw [R=301,L]
+    RewriteRule ^BMW-330D-Diesel-Motor-e90-e91-e92-N57D30 /komplette-motoren/bmw [R=301,L]
+    RewriteRule ^Opel-Meriva-16-OPC-Getriebe-m32 /getriebe-teile/opel [R=301,L]
+    RewriteRule ^Turbolader-der-Marke-GARRETT-GT2260V-BMW-Motor-M57306D3 /motoren-motorenteile/bmw [R=301,L]
+    RewriteRule ^Volvo-/-Ford-Turbolader-von-25-Motor-53049700033 /motoren-motorenteile/ford [R=301,L]
+    RewriteRule ^FIAT-DUCATO-CITROEN-Jumper-Peugeot-Boxer-22HDI/Multijet-Turbolader-4HV-Original /motoren-motorenteile/citroen [R=301,L]
+
+    RewriteRule ^Unterdruckpumpe-UHZ/BOSCH/4R8Q-2A451-AE /kraftstoffpumpen [R=301,L]
+
+    RewriteRule ^Lichtmaschine/Generator-Lichtmaschine/Generator-Citroen-Jumpy /lichtmaschinen-teile/citroen/jumpy [R=301,L]
+    RewriteRule ^Lichtmaschine/Generator-BMW /lichtmaschinen-teile/bmw [R=301,L]
+
+    RewriteRule ^Lichtmaschine/Generator-Lichtmaschine-Opel-Signum-Vectra /lichtmaschinen-teile/opel/vectra [R=301,L]
+
+    RewriteRule ^Lichtmaschine/Generator-BOSCH-120A-OPEL-Astra-H-Zafira-B-A05-20-Turbo-0124425015-131 /lichtmaschinen-teile/opel [R=301,L]
+    RewriteRule ^Lichtmaschine/Generator-Alternator-150A-Peugeot-Fiat-Ford-CA1928IR-9676143580-0121615002 /lichtmaschinen-teile/ford [R=301,L]
+    RewriteRule ^Lichtmaschine/Generator-Lichtmaschine/Generator-Opel /lichtmaschinen-teile/opel [R=301,L]
+    RewriteRule ^Lichtmaschine/Generator-Mercedes /lichtmaschinen-teile/mercedes-benz [R=301,L]
+    RewriteRule ^Lichtmaschine/Generator-VALEO-120A-Mercedes-C-E-Klasse-CLK-SLK-0124515088-2542582A-SG12B /lichtmaschinen-teile/mercedes-benz [R=301,L]
+    RewriteRule ^Lichtmaschine/Generator-Lichtmaschine/Generator-OPEL-Corsa-D-100A-13222930-0124325171-BOSCH-Genera /lichtmaschinen-teile/opel/corsa [R=301,L]
+    RewriteRule ^Lichtmaschine/Generat-Bosch-0124325172-Astra-H-Zafira-B-Vectra-C-Signum-19-CDTI-Opel /lichtmaschinen-teile/opel/astra [R=301,L]
+    RewriteRule ^Lichtmaschine/Generator-OPEL-VECTRA-32-Z32SE-BOSCH-0-124-525-022-0124525022-GM-24-456-224-YF-2 /lichtmaschinen-teile/opel [R=301,L]
+    RewriteRule ^Lichtmaschine/Generator-Lichtmaschine/Generator-157898-Opel-Corsa-C-12-BOSCH-0124425021-GM-55 /lichtmaschinen-teile/opel/corsa [R=301,L]
+
+    RewriteRule ^Lichtmaschine/Generator-RENAULT /lichtmaschinen-teile/renault [R=301,L]
+
+    RewriteRule ^Lichtmaschine/Generator /lichtmaschinen-teile [R=301,L]
+
+    RewriteRule ^Klimageraet/-Klimaanlage-ex-Bundeswehr-220-240-V-ideal-fuer-Kuehlhaus-Kuehlaggregat / [R=301,L]
+
+    RewriteRule ^Vectra-C/-Signum-Reset-AIRBAG-Steuergeraet / [R=301,L]
+    RewriteRule ^Werkstattheizung/-Hallenheizung-NEU-Budeswehr-DANTHERM-37-KW-36-l/h-max-Heizoel / [R=301,L]
+    RewriteRule ^NISSAN-QASHQAI-Radio-PN-2804F-/-28185JD40A /autoradios/nissan [R=301,L]
+
+    RewriteRule ^ANLASSER-STARTER-OPEL-ASTRA /anlasser/opel/astra [R=301,L]
+    RewriteRule ^Anlasser /anlasser [R=301,L]
+
+    RewriteRule ^WebRoot / [R=301,L]
+    RewriteRule ^epages /? [R=301,L]
+
+    # --- /Redirect --- #
+
+    # Handle Front Controller...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+
+    # Handle Authorization Header
+    RewriteCond %{HTTP:Authorization} .
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+</IfModule>

@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /search
+Disallow: /ajax/
+Disallow: /poligon
+
+Sitemap: https://motordock.de/sitemap.xml
+Sitemap: https://motordock.de/modelsmap.xml

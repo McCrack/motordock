@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BulkDataExchangeRequests xmlns="urn:ebay:apis:eBLBaseComponents">
+  <Header>
+    <Version>1067</Version>
+    <SiteID>77</SiteID>
+  </Header>
+</BulkDataExchangeRequests>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GetUserRequest xmlns="urn:ebay:apis:eBLBaseComponents">
+  <UserID>asm.auto.recycling.ltd</UserID>
+</GetUserRequest>

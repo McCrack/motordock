@@ -1,0 +1,19 @@
+{
+	"findItemsAdvancedRequest":{
+		"categoryId": "0",
+		"keywords": "",
+		"itemFilter":[
+			{
+				"name":"ListingType",
+				"value":["StoreInventory","FixedPrice"]
+			},{
+				"name":"HideDuplicateItems",
+				"value":["true"]
+			}
+		],
+		"outputSelector":["StoreInfo","SellerInfo"],
+		"paginationInput":{
+			"entriesPerPage":"1"
+		}
+	}
+}

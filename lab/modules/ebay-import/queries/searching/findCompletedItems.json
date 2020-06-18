@@ -1,0 +1,18 @@
+{
+	"findCompletedItemsRequest":{
+		"itemFilter":[
+			{
+				"name":"Seller",
+				"value":"synetiq"
+			},
+			{
+				"name":"EndTimeFrom",
+				"value":"2019-07-01T00:00:00.000Z"
+			}
+		],
+		"sortOrder":"StartTimeNewest",
+		"paginationInput":{
+			"entriesPerPage":"3"
+		}
+	}
+}

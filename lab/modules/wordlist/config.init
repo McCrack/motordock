@@ -1,0 +1,38 @@
+{
+	"status":{
+		"type":"enum",
+		"value":"enabled",
+		"valid":[
+			"enabled",
+			"disabled"
+		]
+	},
+	"free access":{
+		"type":"enum",
+		"value":"NO",
+		"valid":["YES","NO"]
+	},
+	"access":{
+		"type":"set",
+		"value":"admin, developer",
+		"valid":[
+			"admin",
+			"author",
+			"client",
+			"courier",
+			"developer",
+			"manager",
+			"mediator",
+			"partner",
+			"performer",
+			"topmanager"
+		]
+	},
+	"mode":{
+		"type":"enum",
+		"value":"page",
+		"valid":[
+			"page"
+		]
+	}
+}

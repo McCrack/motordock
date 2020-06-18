@@ -1,0 +1,310 @@
+@font-face{
+    font-family:Roboto;
+    src:local(Roboto Thin),
+        url(/fonts/roboto/Roboto-Thin.eot);
+    src:url(/fonts/roboto/Roboto-Thin.woff2) format("woff2"),
+        url(/fonts/roboto/Roboto-Thin.woff) format("woff"),
+        url(/fonts/roboto/Roboto-Thin.ttf) format("truetype");
+    font-weight:200
+}
+@font-face{
+    font-family:Roboto;
+    src:local(Roboto Light),
+        url(/fonts/roboto/Roboto-Light.eot);
+    src:url(/fonts/roboto/Roboto-Light.woff2) format("woff2"),
+        url(/fonts/roboto/Roboto-Light.woff) format("woff"),
+        url(/fonts/roboto/Roboto-Light.ttf) format("truetype");
+    font-weight:300
+}
+@font-face{
+    font-family:Roboto;
+    src:local(Roboto Regular),
+        url(/fonts/roboto/Roboto-Regular.eot);
+    src:url(/fonts/roboto/Roboto-Regular.woff2) format("woff2"),
+        url(/fonts/roboto/Roboto-Regular.woff) format("woff"),
+        url(/fonts/roboto/Roboto-Regular.ttf) format("truetype");
+    font-weight:400
+}
+@font-face{
+    font-family:Roboto;
+    src:url(/fonts/roboto/Roboto-Medium.eot);
+    src:url(/fonts/roboto/Roboto-Medium.woff2) format("woff2"),
+        url(/fonts/roboto/Roboto-Medium.woff) format("woff"),
+        url(/fonts/roboto/Roboto-Medium.ttf) format("truetype");
+    font-weight:500
+}
+@font-face{
+    font-family:Roboto;
+    src:url(/fonts/roboto/Roboto-Bold.eot);
+    src:url(/fonts/roboto/Roboto-Bold.woff2) format("woff2"),
+        url(/fonts/roboto/Roboto-Bold.woff) format("woff"),
+        url(/fonts/roboto/Roboto-Bold.ttf) format("truetype");
+    font-weight:700
+}
+
+@font-face{
+    font-family:Symbols;
+    src:url(/fonts/EmojiSymbols.woff) format("woff");
+}
+
+body{
+    font-weight: 400;
+    font-family: Roboto,sans-serif;
+    background-color: #F5F8FA;
+}
+
+tr:nth-child(even){
+    background-color: #EEE;
+}
+
+/*** INDICATORS ************/
+
+#save-indicator{
+    line-height: 60px;
+    box-shadow: 5px 5px 5px -2px #00000050;
+}
+#save-indicator > input:checked + label{
+    color: #EC5051;
+}
+
+/*** COLORS ****************/
+
+.main-txt{
+	color: #333;
+}
+.active-txt{
+    color: #10AFFA;
+}
+
+.black-txt{color: black;}
+.dark-txt{color: #666;}
+.white-txt{color: white;}
+.light-txt{color: #DDD;}
+.red-txt{color: #EC5051;}
+.green-txt{color: #00D09A;}
+.blue-txt{color: #10AFDF;}
+.orange-txt{color: orange;}
+.yellow-txt{color: gold;}
+.silver-txt{color: silver;}
+
+.main-bg{
+	color: #FFF;
+}
+.active-bg{
+    background-image: linear-gradient(to top, #009ACF, #20BAEF);
+}
+
+.black-bg{background-color: black;}
+.gray-bg{background-color: #BBB;}
+.silver-bg{background-color: #DDD;}
+.dark-bg{background-color: #222;}
+.white-bg{background-color: white;}
+.light-bg{background-color: #F5F5F5;}
+.red-bg{background-color: #EC5051;}
+.green-bg{background-color: #00D09F;}
+.blue-bg{background-color: #10AFDF;}
+.orange-bg{background-color: orange;}
+.yellow-bg{background-color: gold;}
+.transparent-bg{background-color: transparent;}
+
+.greyscale{
+	filter: grayscale(100);
+}
+.inner-shadow{
+    box-shadow: inset 0 0 10px -3px #00000050;
+}
+
+/*** FORM ******************/
+
+.field{
+    height: 30px;
+    padding: 4px;
+    border-radius: 3px;
+    box-sizing: border-box;
+    border: 1px solid #CCC;
+}
+.field-size-30{width: 30px;}
+.field-size-40{width: 40px;}
+.field-size-60{width: 60px;}
+.field-size-80{width: 80px;}
+.field-size-100{width: 100px;}
+.field-size-120{width: 120px;}
+.field-size-200{width: 200px;}
+
+textarea{
+    padding: 10px;
+    border-radius: 3px;
+    border: 1px solid #CCC;
+    box-sizing: border-box;
+    box-shadow: inset 0 0 8px -5px #00000050;
+}
+
+/*** EFFECTS ***************/
+
+.disabled{
+    pointer-events: none;
+    filter: grayscale(100%) brightness(130%);
+}
+.hover-colorize:hover{
+	filter: grayscale(0);
+}
+.hover-active-txt:hover{
+    color: #1090D0;
+}
+.hover-active-bg:hover{
+    color: white;
+    border-color: #20BAEF;
+    border-bottom-color: #009ACF;
+    background-image: linear-gradient(to top, #009ACF, #20BAEF);
+}
+.hover-brightness:hover{
+    filter: brightness(110%);
+}
+.hover-underline:hover{
+    text-decoration: underline;
+}
+
+/*** SYMBOL ****************/
+
+.icon{
+    font-family: Symbols;
+}
+
+/*** TOOLS *****************/
+
+.tool{
+    
+}
+
+/*** BUTTONS ***************/
+
+.btn{
+    cursor: pointer;
+    border-width: 0;
+    border-radius: 3px;
+    box-shadow: 4px 4px 4px -3px #00000050;
+}
+.btn-sm{
+    font-size: 11px;
+    padding: 5px 12px;
+}
+.btn-md{
+    font-size: 12px;
+    padding: 6px 20px;
+}
+.btn-lg{
+    font-size: 13px;
+    padding: 9px 30px;
+}
+
+.btn-light{
+    color: #333;
+    border: 1px solid #DDD;
+    background-color: #F5F5F5;
+}
+.btn-dark{
+    color: #EEE;
+    border: 1px solid #444;
+    background-image: linear-gradient(to top, #222, #444);
+}
+.btn-warning{
+    color: white;
+    background-color: orange;
+}
+.btn-danger{
+    color: white;
+    background-color: #D02040;
+}
+.btn-success{
+    color: white;
+    background-color: #00CAAA;
+}
+.btn-primary{
+    color: white;
+    background-color: #009ADF;
+}
+.btn:disabled{
+    color: #AAA;
+    background-color: #EEE;
+}
+.hot-btn{
+
+}
+
+/*** CARD ******************/
+
+.card{
+    border:1px solid #DDD;
+    box-shadow: 5px 5px 6px -4px #00000050;
+    background-image: linear-gradient(to top, #FAFAFA, #FFF);
+}
+
+/** TabBar **/
+.tabs > .tab-btn,
+.tabs-md > .tab-btn{
+    color: #AAA;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.tabs > .tab-btn{
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: all .3s;
+    border: 1px solid transparent;
+}
+.tabs > input:checked + .tab-btn{
+    box-shadow: 0 2px 8px -5px #00000050;
+}
+.tabs > input:checked + .tab-btn.white-color{
+    color: #555;
+    border-color: #CCC;
+    background-color: white;
+}
+.tabs > input:checked + .tab-btn.active-color{
+    color: white;
+    background-image: linear-gradient(to top, #009ACF, #20BAEF);
+}
+.tabs > input:checked + .tab-btn.dark-color{
+    color: white;
+    background-image: linear-gradient(to top, #111, #333);
+}
+
+.tabs > .tab,
+.tabs-md > .tab,
+.accordion > .tab{
+    font-size: 15px;
+}
+
+.tabs > .tab > .tab-body{
+    border: 1px solid #CCC;
+}
+
+.accordion{
+    margin: 0 auto;
+    /*max-width: 360px;*/
+}
+.accordion > .tab-btn{
+    color: #08B;
+    padding: 10px;
+    font-size: 15px;
+    cursor: pointer;
+}
+.accordion > .tab-btn::after{
+    float: right;
+    content: "❭";
+    margin-right: 5px;
+    font-weight: bold;
+    display: inline-block;
+    transform: rotate(90deg);
+    transition: transform .3s;
+}
+.accordion > input:checked + .tab-btn{
+    color: #567;
+}
+.accordion > input:checked + .tab-btn::after{
+    transform: rotate(-90deg);
+}
+.accordion > .tab{
+    border-bottom: 1px solid #CCC;
+}

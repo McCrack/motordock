@@ -1,0 +1,47 @@
+*   Trying 66.135.216.251...
+* TCP_NODELAY set
+* Connected to svcs.ebay.com (66.135.216.251) port 443 (#0)
+* Initializing NSS with certpath: sql:/etc/pki/nssdb
+* Unable to initialize NSS database
+* Initializing NSS with certpath: none
+*   CAfile: /etc/pki/tls/certs/ca-bundle.crt
+  CApath: none
+* ALPN, server accepted to use http/1.1
+* SSL connection using TLS_RSA_WITH_AES_128_GCM_SHA256
+* Server certificate:
+* 	subject: CN=svcs.ebay.com,OU=Site Operations,O="eBay, Inc.",L=San Jose,ST=California,C=US
+* 	start date: Jul 24 00:00:00 2018 GMT
+* 	expire date: Jul 25 12:00:00 2019 GMT
+* 	common name: svcs.ebay.com
+* 	issuer: CN=DigiCert SHA2 Secure Server CA,O=DigiCert Inc,C=US
+> POST /services/search/FindingService/v1 HTTP/1.1
+Host: svcs.ebay.com
+Accept: */*
+Content-type: application/x-www-form-urlencoded
+X-EBAY-SOA-SERVICE-NAME: FindingService
+X-EBAY-SOA-OPERATION-NAME: findItemsByKeywords
+X-EBAY-SOA-SECURITY-APPNAME: ViktorSi-Motordoc-PRD-b72183157-280fb647
+X-EBAY-SOA-SERVICE-VERSION: 1.0.0
+X-EBAY-SOA-GLOBAL-ID: EBAY-US
+X-EBAY-SOA-REQUEST-DATA-FORMAT: JSON
+Content-Length: 87
+
+* upload completely sent off: 87 out of 87 bytes
+< HTTP/1.1 500 Internal Server Error
+< Server: Apache-Coyote/1.1
+< X-EBAY-SOA-SERVICE-METRICS: 33751800
+< X-EBAY-SOA-ERROR-RESPONSE: TRUE
+< X-EBAY-SOA-REQUEST-ID: 16b99d17-4d10-ac89-2087-6fe7f9389078
+< X-EBAY-SOA-SERVICE-VERSION: 1.13.0
+< X-EBAY-SOA-LOCALE-LIST: en-US_US
+< X-EBAY-SOA-MESSAGE-PROTOCOL: NONE
+< X-EBAY-SOA-RESPONSE-DATA-FORMAT: JSON
+< X-EBAY-SOA-GLOBAL-ID: EBAY-US
+< X-EBAY-SOA-OPERATION-NAME: findItemsByKeywords
+< X-EBAY-SOA-SERVICE-NAME: {http://www.ebay.com/marketplace/search/v1/services}FindingService
+< Content-Type: text/plain;charset=UTF-8
+< Transfer-Encoding: chunked
+< Date: Thu, 27 Jun 2019 16:42:49 GMT
+< nnCoection: close
+< 
+* Connection #0 to host svcs.ebay.com left intact

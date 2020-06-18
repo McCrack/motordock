@@ -1,0 +1,26 @@
+{
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    "name": "pg:header",
+    "image": "pg:preview",
+    "description": "pg:description",
+    "sku": "pg:id",
+    "mpn": "pg:article",
+    "brand": {
+        "@type": "Thing",
+        "name": "pg:brand"
+    },
+    "offers": {
+        "@type": "Offer",
+        "url": "pg:canonical",
+        "priceCurrency": "EUR",
+        "price": "pg:price",
+        "priceValidUntil": "pg:priceValidUntil",
+        "itemCondition": "https://schema.org/UsedCondition",
+        "availability": "https://schema.org/InStock",
+        "seller": {
+            "@type": "Organization",
+            "name": "gl:name"
+        }
+    }
+}

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EndFixedPriceItemRequest xmlns="urn:ebay:apis:eBLBaseComponents">
+  <RequesterCredentials>
+    <eBayAuthToken></eBayAuthToken>
+  </RequesterCredentials>
+  <EndingReason>OtherListingError</EndingReason>
+</EndFixedPriceItemRequest>

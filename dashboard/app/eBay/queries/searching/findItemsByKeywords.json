@@ -1,0 +1,6 @@
+{
+	"findItemsByKeywordsRequest": {
+		"keywords": "",
+		"paginationInput": { "entriesPerPage": "1" }
+	}
+}

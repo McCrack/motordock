@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GetItemRequest xmlns="urn:ebay:apis:eBLBaseComponents">
+	<RequesterCredentials>
+		<eBayAuthToken></eBayAuthToken>
+	</RequesterCredentials>
+	<ItemID></ItemID>
+	<DetailLevel>ReturnAll</DetailLevel>
+	<IncludeItemCompatibilityList>true</IncludeItemCompatibilityList>
+	<IncludeItemSpecifics>true</IncludeItemSpecifics>
+	<OutputSelector>ItemID</OutputSelector>
+	<OutputSelector>Currency</OutputSelector>
+	<OutputSelector>ListingDetails</OutputSelector>
+	<OutputSelector>ListingType</OutputSelector>
+	<OutputSelector>Location</OutputSelector>
+	<OutputSelector>Quantity</OutputSelector>
+	<OutputSelector>SellingStatus</OutputSelector>
+	<OutputSelector>SKU</OutputSelector>
+	<OutputSelector>PictureDetails</OutputSelector>
+	<OutputSelector>ReturnPolicy</OutputSelector>
+	<OutputSelector>ConditionDescription</OutputSelector>
+</GetItemRequest>

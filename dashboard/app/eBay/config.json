@@ -1,0 +1,87 @@
+{
+  "default category": "225",
+  "default module": "research",
+  "market": "3",
+  "AppID": "ViktorSi-Motordoc-PRD-b72183157-280fb647",
+  "DevID": "a33a4f6f-df43-42d9-a7d7-5cc797338fda",
+  "CertID": "PRD-721831574462-93ab-4825-8bc0-af8a",
+  "RuName": "Viktor_Sibibel-ViktorSi-Motord-ymbvbnmfs",
+  "SessionID": "BwoGAA**8d6464791700a48a4a208460fffe150b",
+  "access": ["admin", "developer"],
+  "markets": {
+    "0": "EBAY-US",
+    "2": "EBAY-ENCA",
+    "3": "EBAY-GB",
+    "16": "EBAY-AT",
+    "71": "EBAY-FR",
+    "77": "EBAY-DE",
+    "101": "EBAY-IT",
+    "146": "EBAY-NL",
+    "186": "EBAY-ES",
+    "193": "EBAY-CH",
+    "201": "EBAY-HK",
+    "205": "EBAY-IE",
+    "212": "EBAY-PL"
+  },
+  "price": {
+    "Tax": "1",
+    "eBay Tax": "1",
+    "Currency Rate": "1.17",
+    "price gradation": { "0": "2", "500": "1.7" },
+    "special formules": { "33615": "2 - ($price / 5000)" }
+  },
+  "filters": {
+    "Condition": ["3000"],
+    "Listing Type": ["StoreInventory", "FixedPrice"],
+    "Other": ["HideDuplicateItems"]
+  },
+  "Min Price": 1,
+  "Max Price": "1000",
+  "token": "AgAAAA**AQAAAA**aAAAAA**hLtaXg**nY+sHZ2PrBmdj6wVnY+sEZ2PrA2dj6MFkISgCJWFowSdj6x9nY+seQ**BwoGAA**AAMAAA**X1gh53Aq7VWoeFVngk3mN5tmzoYsCYaPBt3VJ7tfdt9yCzJs/aEta5CfwdacLSGOi2NuFyOqMXpsxQRrGKDFu/ti+84604gTIe5RsTWiurN0+qK0ZIKKLgysb6NcNg3ocOLZ7oOPgHMcOiUcdq2hFCTlaIIA0nJ9TI/tQqPznB27nw9BLodLsMpmEawUN1nUzxXjrY39uAd66sKXlW8t5hqBcWgJQdYgLnlj1UNDz5rylJjizq7yst6igjedMjEvuY9ScyNbunA98I5kg53jjaFLT7Dk3IUM47UHpD3VteiMS0R2HDA8K4PA8OE35G4ZuwItnMxtaHXyHmNj6c2+9nIbR3tz7gR4DUcZ3pHVutYbqfycaNL6vp4GVwNX0pq/LMWcpA+o8R5N5hN7AcNnafBMAwJsmdcsmTsvBOOAxHfSXknOqW49vTt/B6FAoGUH+hyylpthcEx9JlcdLm8qCRhIjZI+sa+ZlABojbpUN2P1hABfSmdEs4mWTlYYihgLq8syIK/typI8f61TGXLmtu5rT01VPl/JIvRVWQeD4BRMqg0+TbuMBw+Ai7wBlFj87bgcTWywPlRYrpHjtHnKl2d79A2Q2ZCXRpvMlf3O58lkaPXofK2nYx3dy/1xTGMT/h71evHmjeWYnEiAr/PItjd8mw8+AC4GUsT8ylttKkL3bp43qZBSlmnIpefpyCJFFmiIAQf8uz5/183Js0pYiKUU5JXp/Mw8ntJZGb0ksIdJ9GS9kLZaugXgrQyxDwhh",
+
+  "CategoryMappingAllowed": "true",
+  "HitCounter": "NoHitCounter",
+  "DispatchTimeMax": "3",
+  "Site": "Germany",
+  "Country": "DE",
+  "Location": "Hannover",
+  "PostalCode": "30179",
+  "Currency": "EUR",
+  "ListingDuration": "GTC",
+  "PaymentMethods": "PayPal",
+  "PayPalEmailAddress": "datamorg@gmail.com",
+  "PrivateListing": "false",
+  "ShippingDetails": {
+    "GlobalShipping": "true",
+    "ShippingType": "Flat",
+    "ShippingDiscountProfileID": "0",
+    "InternationalShippingDiscountProfileID": "0",
+    "SalesTax": {
+      "SalesTaxPercent": "0.0",
+      "ShippingIncludedInTax": "false"
+    },
+    "CalculatedShippingRate": {
+      "PackagingHandlingCosts": "0",
+      "InternationalPackagingHandlingCosts": "0",
+      "OriginatingPostalCode": "30179"
+    },
+    "ShippingServiceOptions": {
+      "FreeShipping": "false",
+      "ShippingService": "DE_DHLPaket",
+      "ShippingServiceCost": "5.49",
+      "ShippingServicePriority": "1",
+      "ShippingServiceAdditionalCost": "0.00"
+    }
+  },
+  "ReturnPolicy": {
+    "ReturnsWithinOption": "Days_30",
+    "ReturnsWithin": "30 Days",
+    "ReturnsAcceptedOption": "ReturnsAccepted",
+    "ReturnsAccepted": "Returns Accepted",
+    "ShippingCostPaidByOption": "Buyer",
+    "ShippingCostPaidBy": "Buyer",
+    "InternationalReturnsAcceptedOption": "ReturnsAccepted",
+    "InternationalReturnsWithinOption": "Days_30",
+    "InternationalShippingCostPaidByOption": "Buyer"
+  }
+}

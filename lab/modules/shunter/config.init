@@ -1,0 +1,57 @@
+{
+	"status":{
+		"type":"enum",
+		"value":"enabled",
+		"valid":[
+			"enabled",
+			"disabled"
+		]
+	},
+	"free access":{
+		"type":"enum",
+		"value":"NO",
+		"valid":["YES","NO"]
+	},
+	"access":{
+		"type":"set",
+		"value":"admin, developer",
+		"valid":[
+			"admin",
+			"developer",
+			"editor",
+			"manager",
+			"author",
+			"designer",
+			"partner",
+			"performer"
+		]
+	},
+	"mode":{
+		"type":"enum",
+		"value":"page",
+		"valid":[
+			"page",
+			"box"
+		]
+	},
+	"tab":{
+		"type":"enum",
+		"value":"statuses",
+		"valid":[
+			"statuses",
+			"performers",
+			"types"
+		]
+	},
+	"privileged groups":{
+		"type":"set",
+		"value":"developer,admin,editor",
+		"valid":[
+			"developer",
+			"admin",
+			"author",
+			"developer",
+			"editor"
+		]
+	}
+}

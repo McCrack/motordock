@@ -1,0 +1,35 @@
+{
+    "@context":"http://schema.org",
+    "@type":"Organization",
+    "name":"gl:name",
+    "url":"gl:url",
+    "logo":{
+        "@type":"ImageObject",
+        "url":"gl:logo",
+        "width":"512px",
+        "height":"512px"
+    },
+    "email":"info@motordock.de",
+    "sameAs":[
+        "https://www.ebay-kleinanzeigen.de/pro/Motordock-Gmbh"
+    ],
+    "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "30179, Hannover, Germany",
+        "streetAddress": "Wohlenbergstrasse 29"
+    },
+    "contactPoint" : [
+        {
+            "@type":"ContactPoint",
+            "telephone":"+49-511-940-40914",
+            "contactType":"sales",
+            "areaServed":"DE"
+        },
+        {
+            "@type":"ContactPoint",
+            "telephone":"+49-511-940-40914",
+            "contactType":"customer service",
+            "areaServed":"DE"
+        }
+    ]
+}

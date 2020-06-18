@@ -1,0 +1,56 @@
+<?php
+
+return [
+    'home' => "Home",
+    'condition' => "Condition",
+    'used' => "Used",
+    'find' => "FIND",
+    'search' => "Search",
+    'search-result' => "Search Result",
+    'nothing-found' => "Nothing found",
+    'working-hours' => "Working Hours",
+    'sold' => "SOLD",
+
+    '404' => "Page Not Found",
+
+    'Mo-Fr' => "Mon-Fri",
+    'Sa-Su-closed' => "Sat-Sun: Сlosed",
+    'callback' => "Callback",
+
+    'back' => "Back",
+    'inStock' => "In Stock",
+    'buy-engine' => "Buy Engine",
+
+    'still-questions' => "If you still have questions",
+    'did-not-find' => "If you didn’t find what you were looking for",
+    'call-us' => "Contact us by phone",
+    'fill-out-callback-form' => "Or fill out the callback form",
+
+    'engine' => "Engine",
+    'visit-our-page-on' => "Visit our page on",
+    'items-in-category' => "Items in Category",
+    'submit' => "Submit",
+    'comment' => "Comment",
+    'all-makes' => "All Makes",
+    'contacts' => "Contacts",
+    'categories' => "Categories",
+    'cart' => "Cart",
+    'toCart' => "Add to Cart",
+    'my-cart' => "My Cart",
+    'cart-empty' => "Shopping cart is empty",
+    'create-order' => "Create Order",
+    'order-form' => "Order Form",
+    'contact-info' => "Contact Information",
+    'name' => "Name",
+    'last-name' => "Last Name",
+    'tel' => "Phone",
+    'delivery' => "Delivery",
+    'city' => "City",
+    'postcode' => "Postcode",
+    'address' => "Street and house number",
+    'order-comment' => "Comment on the order",
+    'order' => "Order",
+    'makes' => "Makes",
+    'vehicle-spare' => "All Vehicle Spare",
+    'privacy-policy-consent' => "I have read the privacy policy and agree to it"
+];

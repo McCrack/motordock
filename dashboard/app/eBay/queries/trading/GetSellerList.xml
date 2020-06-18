@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GetSellerListRequest xmlns="urn:ebay:apis:eBLBaseComponents">
+  <RequesterCredentials>
+    <eBayAuthToken></eBayAuthToken>
+  </RequesterCredentials>
+  <ErrorLanguage>en_US</ErrorLanguage>
+  <WarningLevel>High</WarningLevel>
+  <DetailLevel>ReturnAll</DetailLevel>
+  <IncludeWatchCount>true</IncludeWatchCount> 
+
+  <Pagination> 
+    <EntriesPerPage></EntriesPerPage> 
+    <PageNumber></PageNumber> 
+  </Pagination> 
+</GetSellerListRequest>

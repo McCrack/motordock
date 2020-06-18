@@ -1,0 +1,316 @@
+<?php
+$query = JSON::load("core/api/eBay/queries/searching/findItemsIneBayStores.json");
+$filters = [];
+foreach ($query['findItemsIneBayStoresRequest']['itemFilter'] as $filter) {
+	$filters[$filter['name']] = $filter['value'];
+}
+
+$cng = JSON::load("modules/ebay-client/price-config.init");
+
+?>
+<div align="right">
+	<b class="left">STORE:</b>
+	<div class="select" title="Store">
+		<select name="SellerID">
+			<?foreach($mySQL->get("SELECT SellerID,StoreName FROM cb_sellers") as $seller):?>
+			<option <?if($seller['StoreName']==$query['findItemsIneBayStoresRequest']['StoreName']):?>selected<?endif?> value="<?=$seller['SellerID']?>"><?=$seller['StoreName']?></option>
+			<?endforeach?>
+		</select>
+	</div>
+</div>
+<br>
+<fieldset>
+	<?if(ARG_3):
+	$catName = $mySQL->getRow("SELECT name FROM cb_categories WHERE CatID={int} LIMIT 1", ARG_3)['name'];
+	$catName = json_decode($catName, true)['de'];
+	?>
+	<legend><b><?=$catName?></b><sup><a href="/ebay-client">✕</a></sup></legend>
+	<input name="CatID" value="<?=ARG_3?>" type="hidden">
+	<?else:?>
+	<legend><b>All categories</b></legend>
+	<?endif?>
+	Total Pages: <output name="pages">0</output><br>
+	Total Entries: <output name="entries">0</output>
+	<hr>
+	<div>
+		<div class="right">
+			<br><br>
+			<button name="import" type="reset" class="dark-btn-bg" disabled>Start Import</button>
+			<button name="find" type="submit" class="light-btn-bg">Find</button>
+		</div>
+		<label><input type="checkbox" name="save"> <span>Save Query</span></label><br>
+		<label><input type="checkbox" name="getExtended" checked disabled> <span>Get Extended Data</span></label>
+	</div>
+</fieldset>
+<fieldset><legend><b>Period</b></legend>
+	<div class="columns-2">
+		<label><input type="radio" name="period" value="lastday" checked> <span>Last 24h</span></label>
+		<label><input type="radio" name="period" value="today"> <span>Today (GMT)</span></label>
+		<label><input type="radio" name="period" value="custom"> <span>Custom Period (GMT)</span></label>
+		<div align="right">
+			From: <input type="date" name="from" required disabled><br>
+			To: <input type="date" name="to" required disabled>
+		</div>
+	</div>
+</fieldset>
+
+<input id="pricelimits" type="checkbox" name="pricelimits">
+<label for="pricelimits"><b>Limits of Price</b></label>
+<fieldset disabled>
+	<div class="columns-2">
+		<div>
+			<span>Min Price:</span><br>
+			<input name="MinPrice" type="number" min="0" value="<?=(INT)$filters['MinPrice']?>" size="15">
+		</div>
+		<div>
+			<span>Max Price:</span><br>
+			<input name="MaxPrice" type="number" min="10" value="<?=(INT)$filters['MaxPrice']?>" size="15">
+		</div>
+	</div>
+</fieldset>
+<fieldset class="price-formation"><legend><b>Price Formation</b></legend>
+	<label>
+		<b>Tax:</b>
+		<input name="tax" type="text" value="<?=$cng['Tax']?>" size="8">
+	</label>
+	<label>
+		<b>eBay tax:</b>
+		<input name="eBayTax" type="text" value="<?=$cng['eBay Tax']?>" size="8">
+	</label>
+	<label>
+		<b>Currency Rate:</b>
+		<input name="currencyRate" type="text" value="<?=$cng['Currency Rate']?>" size="8">
+	</label>
+
+	<div class="price-gradation">
+		<h3>Price Gradation</h3>
+		<table rules="cols" width="100%" cellpadding="5" cellspacing="0" bordercolor="#CCC">
+			<thead>
+				<tr class="dark-btn-bg">
+					<th width="28"></th>
+					<th width="45%">Threshold value</th>
+					<th>Ratio</th>
+					<th width="28"></th>
+				</tr>
+			</thead>
+			<tbody>
+				<?foreach($cng['price gradation'] as $key=>$val):?>
+				<tr align="center">
+					<th class="tool" title="add row" data-translate="title" onclick="addRow(this.parentNode)">+</th>
+					<td contenteditable="true"><?=$key?></td>
+					<td contenteditable="true"><?=$val?></td>
+					<th class="tool" title="delete row" data-translate="title" onclick="deleteRow(this.parentNode)">✕</th>
+				</tr>
+				<?endforeach?>
+			</tbody>
+		</table>
+	</div>
+
+	<div class="price-formules">
+		<h3>Special Price Formules</h3>
+		<table rules="cols" width="100%" cellpadding="5" cellspacing="0" bordercolor="#CCC">
+			<thead>
+				<tr class="dark-btn-bg">
+					<th width="28"></th>
+					<th width="120px">Category ID</th>
+					<th>Formula</th>
+					<th width="28"></th>
+				</tr>
+			</thead>
+			<tbody>
+				<?foreach($cng['special formules'] as $key=>$val):?>
+				<tr align="center">
+					<th class="tool" title="add row" data-translate="title" onclick="addRow(this.parentNode)">+</th>
+					<td contenteditable="true"><?=$key?></td>
+					<td contenteditable="true"><?=$val?></td>
+					<th class="tool" title="delete row" data-translate="title" onclick="deleteRow(this.parentNode)">✕</th>
+				</tr>
+				<?endforeach?>
+			</tbody>
+		</table>
+	</div>
+</fieldset>
+<h3>Filters</h3>
+<!--
+<div align="right">
+	<label><input type="checkbox" name="onlyfine"> <span>Skip if there is Only One Photo in the Gallery</span></label>
+</div>
+-->
+<div id="filters">
+	<fieldset><legend><b>Condition</b></legend>
+		<div class="columns-2">
+			<?foreach([
+				"1000"=>"New",
+				"1500"=>"New other (see details)",
+				"1750"=>"New with defects",
+				"2000"=>"Manufacturer refurbished",
+				"2500"=>"Seller refurbished",
+				"3000"=>"Used",
+				"4000"=>"Very Good",
+				"5000"=>"Good",
+				"6000"=>"Acceptable",
+				"7000"=>"For parts or not working"
+			] as $code=>$condition):?>
+			<label><input type="checkbox" <?if(in_array($code, $filters['Condition'])):?>checked<?endif?> value="<?=$code?>" name="Condition"> <span><?=$condition?></span></label>
+			<?endforeach?>
+		</div>
+	</fieldset>
+	<fieldset><legend><b>Listing Type</b></legend>
+		<div class="columns-3">
+			<?foreach([
+				"StoreInventory"=>"Store Inventory",
+				"FixedPrice"=>"Fixed Price",
+				"Auction"=>"Auction",
+				"AuctionWithBIN"=>"Auction With BIN",
+				"Classified"=>"Classified"
+			] as $type=>$title):?>
+			<label><input type="checkbox" <?if(in_array($type, $filters['ListingType'])):?>checked<?endif?> value="<?=$type?>" name="ListingType"> <span><?=$title?></span></label>
+			<?endforeach?>
+		</div>
+	</fieldset>
+	<fieldset><legend><b>Other</b></legend>
+		<div class="columns-3">
+			<label><input type="checkbox" name="HideDuplicateItems" <?if(isset($filters['HideDuplicateItems'])):?>checked<?endif?> value="true"> <span>Hide Duplicate Items</span></label>
+			<label><input type="checkbox" name="FreeShippingOnly" <?if(isset($filters['FreeShippingOnly'])):?>checked<?endif?> value="true"> <span>Free Shipping Only</span></label>
+			<label><input type="checkbox" name="ExcludeAutoPay" <?if(isset($filters['ExcludeAutoPay'])):?>checked<?endif?> value="true"> <span>Exclude AutoPay</span></label>
+			<label><input type="checkbox" name="BestOfferOnly" <?if(isset($filters['BestOfferOnly'])):?>checked<?endif?> value="true"> <span>Best Offer Only</span></label>
+		</div>
+	</fieldset>
+</div>
+<script>
+(function(container){
+	var fields,
+		form = document.querySelector("#request"),
+		pricelimits=form.querySelector("#pricelimits+label+fieldset");
+	form.onsubmit=function(event){
+		event.preventDefault();
+		fields = (function(fields){
+			fields['command']=form.command.value;
+			fields['SellerID']=form.SellerID.value;
+			if(form.save.checked){
+				fields['save']="true";
+			}
+			fields['period'] = form.period.value;
+			if(fields['period']=="custom"){
+				fields['to'] =((form.to.valueAsNumber/1000)>>0);
+				fields['from'] = ((form.from.valueAsNumber/1000)>>0);
+			}
+			if(form.pricelimits.checked){
+				fields['pricelimits'] = "true";
+				fields['MinPrice'] = form.MinPrice.value;
+				fields['MaxPrice'] = form.MaxPrice.value;
+			}
+			fields['filters'] = {};
+			form.querySelectorAll("#filters input:checked").forEach(function(inp){
+				if(fields['filters'][inp.name]){
+					fields['filters'][inp.name].push(inp.value);
+				}else fields['filters'][inp.name] = [inp.value];
+			});
+			if(form.CatID){
+				fields['CatID']=form.CatID.value;
+			}
+			fields['page'] = 1;
+			return fields;
+		})({})
+		XHR.push({
+			addressee:"/ebay-client/router/searching/"+form.api.value,
+			body:JSON.encode(fields),
+			onsuccess:function(response){
+				try{
+					response = JSON.parse(response);
+					form.pages.value = response['totalPages'];
+					form.entries.value = response['totalEntries'];
+
+					form.save.checked = false;
+					form.getExtended.disabled =
+					form.import.disabled = (response['totalEntries'] < 1);
+				}catch(e){
+					alert(response);
+				}
+			}
+		});
+	}
+	form.onreset=function(event){
+		event.preventDefault();
+		form.find.disabled =
+		form.import.disabled =
+		form.getExtended.disabled = true;
+		delete fields['save'];
+		if(form.getExtended.checked){
+			fields['getExtended'] = "true";
+		}
+		fields['price'] = {
+			'Tax': form.tax.value,
+			'eBay Tax': form.eBayTax.value,
+			'Currency Rate': form.currencyRate.value,
+			'price gradation': (function(grad,key){
+				form.querySelectorAll(".price-gradation>table>tbody>tr>td").forEach(function(cell, i){
+					if(i%2 && key){
+						grad[key] = cell.textContent.trim();
+					}else if(cell.textContent.length) {
+						key = cell.textContent.trim();
+					}
+				});
+				return grad;
+			})({}),
+			'special formules': (function(formules){
+				form.querySelectorAll(".price-formules>table>tbody>tr>td").forEach(function(cell, i){
+					if(i%2 && key){
+						formules[key] = cell.textContent.trim();
+					}else if(cell.textContent.length) {
+						key = cell.textContent.trim();
+					}
+				});
+				return formules;
+			})({})
+		}
+		importItems(form.pages.value);
+	}
+	var importItems = function(i){
+		fields['page'] = i;
+		XHR.push({
+			addressee:"/ebay-client/router/import/"+form.api.value,
+			body:JSON.encode(fields),
+			onsuccess:function(response){
+				var tile = doc.create("div",{id:"tile"});
+				try{
+					response = JSON.parse(response);
+					response.forEach(function(itm){
+						var snippet = doc.create("a",{class:"snippet"});
+						snippet.appendChild(doc.create("div",{class:"preview"}, "<img src='"+itm['preview']+"' alt=''>"));
+						snippet.appendChild(doc.create("div",{class:"brand active-txt"}, itm['brand']));
+						snippet.appendChild(doc.create("div",{class:"header"}, itm['named']));
+						snippet.appendChild(doc.create("div",{class:"price",align:"right"}, itm['purchase']+" "+itm['currency']+" -> € <b>"+itm['selling']+"</b>"));
+
+						tile.appendChild(snippet);
+					});
+					form.pages.value = (--i);
+
+					setTimeout(function(){
+						if(i){
+							importItems(i);
+						}else{
+							form.find.disabled = false;
+						}
+					},2000);
+				}catch(e){
+					tile.innerHTML = response
+				}
+				var log = document.querySelector("#wrapper>main");
+					log.innerHTML = "";
+					log.appendChild(tile);
+			}
+		});
+	}
+	form.period.forEach(function(btn){
+		btn.onchange=function(){
+			form.to.disabled =
+			form.from.disabled = (btn.value!="custom");
+		}
+	});
+	form.pricelimits.onchange=function(){
+		pricelimits.disabled=!form.pricelimits.checked;
+	}
+	form.pricelimits.onchange();
+})(document.currentScript.parentNode)
+</script>

@@ -1,0 +1,35 @@
+{
+	"findItemsIneBayStoresRequest":{
+		"storeName":[
+			"SYNETIQ Intelligent Solutions",
+			"ASM Auto Recycling",
+			"Silverlake Automotive Recycling"
+		],
+		"outputSelector":[
+			"StoreInfo",
+			"SellerInfo",
+			"PictureURLLarge"
+		],
+		"itemFilter":[{
+			"name":"MinPrice",
+			"value":"0"
+		},{
+			"name":"MaxPrice",
+			"value":"20"
+		},{
+			"name":"StartTimeFrom",
+			"value":"2019-07-08T00:00:00"
+		},{
+			"name":"ListingType",
+			"value":["StoreInventory","FixedPrice"]
+		},{
+			"name":"HideDuplicateItems",
+			"value":["true"]
+		}],
+		"sortOrder":"StartTimeNewest",
+		"paginationInput":{
+			"entriesPerPage":"20",
+			"pageNumber":"1"
+		}
+	}
+}

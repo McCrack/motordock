@@ -1,0 +1,112 @@
+<?php
+$query = JSON::load("core/api/eBay/queries/searching/findItemsIneBayStores.json");
+$filters = [];
+foreach ($query['findItemsIneBayStoresRequest']['itemFilter'] as $filter) {
+	$filters[$filter['name']] = $filter['value'];
+}
+?>
+<div align="right">
+	<b class="left">STORE:</b>
+	<div class="select" title="Store">
+		<select name="SellerID">
+			<?foreach($mySQL->get("SELECT SellerID,StoreName FROM cb_sellers") as $seller):?>
+			<option <?if($seller['StoreName']==$query['findItemsIneBayStoresRequest']['StoreName']):?>selected<?endif?> value="<?=$seller['SellerID']?>"><?=$seller['StoreName']?></option>
+			<?endforeach?>
+		</select>
+	</div>
+</div>
+<br>
+<fieldset>
+	<div class="toolbar right">
+	</div>
+	In Base: <output name="inbase">0</output><br>
+	Total Entries: <output name="entries">0</output>
+	<hr>
+	<span class="left">Deleted Items: <output name="deleted">0</output></span>
+	<div class="right">
+		<button name="cleaning" type="reset" class="dark-btn-bg" disabled>Cleaning</button>
+		<button name="find" type="submit" class="light-btn-bg">Find</button>
+	</div>
+</fieldset>
+<fieldset><legend><b>Period</b></legend>
+	<div class="columns-2">
+		<label><input type="radio" name="period" value="lastday" checked> <span>Last 24h</span></label>
+		<label><input type="radio" name="period" value="today"> <span>Today (GMT)</span></label>
+		<label><input type="radio" name="period" value="custom"> <span>Custom Period (GMT)</span></label>
+		<div align="right">
+			From: <input type="date" name="from" required disabled><br>
+			To: <input type="date" name="to" required disabled>
+		</div>
+	</div>
+</fieldset>
+
+</div>
+<script>
+(function(container){
+	var fields;
+	var items = [];
+	var	form = document.querySelector("#request");
+
+	form.onsubmit=function(event){
+		event.preventDefault();
+		fields = (function(fields){
+			fields['command']=form.command.value;
+			fields['SellerID']=form.SellerID.value;
+			fields['period'] = form.period.value;
+			if(fields['period']=="custom"){
+				fields['to'] =((form.to.valueAsNumber/1000)>>0);
+				fields['from'] = ((form.from.valueAsNumber/1000)>>0);
+			}
+			fields['page'] = 1;
+			return fields;
+		})({})
+		XHR.push({
+			addressee:"/ebay-client/router/findcompleted/"+form.api.value,
+			body:JSON.encode(fields),
+			onsuccess:function(response){
+				try{
+					response = JSON.parse(response);
+					form.entries.value = response['totalEntries'];
+					form.inbase.value = response['inBase'];
+					items = [];
+					var tile = doc.create("div",{id:"tile"});
+					response['items'].forEach(function(itm){
+						items.push(itm['ThingID']);
+						var snippet = doc.create("a",{class:"snippet"});
+						snippet.appendChild(doc.create("div",{class:"preview"}, "<img src='"+itm['preview']+"' alt=''>"));
+						snippet.appendChild(doc.create("div",{class:"header"}, itm['named']));
+						snippet.appendChild(doc.create("div",{class:"status",align:"right"}, "<b class='red-txt'>"+itm['status']+"</b>"));
+
+						tile.appendChild(snippet);
+					});
+					var log = document.querySelector("#wrapper>main");
+					log.innerHTML = "";
+					log.appendChild(tile);
+					form.cleaning.disabled = (response['inBase'] > 0) ? false : true;
+				}catch(e){
+					alert(response);
+				}
+			}
+		});
+	}
+	form.onreset=function(event){
+		event.preventDefault();
+		if(items.length){
+			XHR.push({
+				addressee:"/ebay-client/router/clean/"+form.api.value,
+				body:JSON.encode(items),
+				onsuccess:function(response){
+					form.deleted.value = response;
+					form.cleaning.disabled = true;
+				}
+			});
+		}
+	}
+	form.period.forEach(function(btn){
+		btn.onchange=function(){
+			form.to.disabled =
+			form.from.disabled = (btn.value!="custom");
+		}
+	});
+})(document.currentScript.parentNode)
+</script>

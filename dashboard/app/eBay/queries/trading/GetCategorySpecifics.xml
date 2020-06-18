@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GetCategorySpecificsRequest xmlns="urn:ebay:apis:eBLBaseComponents">
+	<RequesterCredentials>
+		<eBayAuthToken></eBayAuthToken>
+	</RequesterCredentials>
+	<WarningLevel>High</WarningLevel>
+	<CategorySpecific>
+		<CategoryID></CategoryID>
+	</CategorySpecific>
+</GetCategorySpecificsRequest>

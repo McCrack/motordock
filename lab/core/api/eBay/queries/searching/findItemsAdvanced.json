@@ -1,0 +1,15 @@
+{
+	"findItemsAdvancedRequest":{
+		"outputSelector":["PictureURLLarge"],
+		"itemFilter":[
+			{
+				"name":"Seller",
+				"value":"synetiq"
+			}
+		],
+		"sortOrder":"StartTimeNewest",
+		"paginationInput":{
+			"entriesPerPage":"1"
+		}
+	}
+}

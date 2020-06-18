@@ -1,0 +1,15 @@
+.wrapper{
+	display: grid;
+	grid-gap: 8px;
+	grid-template-rows: 60px auto;
+	grid-template-columns: 380px auto;
+}
+.wrapper > header{
+	grid-column: 1/3;
+}
+.wrapper > aside{
+	
+}
+.wrapper > main{
+	
+}
